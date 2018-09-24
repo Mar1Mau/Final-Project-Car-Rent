@@ -1,0 +1,81 @@
+<!-- Extended material form grid -->
+<div class="row d-flex justify-content-center">
+  <form class=" col-md-8 col-lg-8 col-xl-6 p-5  ">
+    <div class="well well-lg" *ngIf="actionMsg">{{actionMsg}}</div>
+
+    <div class="form-row">
+     
+
+        <div class="col-md-12">
+            <div class="form-group">
+                <label for="exampleFormControlSelect1">Car Model</label>
+                
+              <select class="form-control mb-4" [(ngModel)]="localCar.CarType" name="CarType.Model" >
+                  <option  *ngFor="let car of this.carTypes" [ngValue]="car">
+                    <a (click)="setSelectedCarType(car)">{{car.ManufactrName}} {{car.Model}}</a></option>
+                
+                </select>
+              </div>
+            </div>
+
+            <div class="col-md-12">
+                <!-- Material input -->
+                <div class="md-form form-group">
+                  <input type="number" [(ngModel)]="localCar.CurrentMileage" name="CurrentMileage" class="form-control" placeholder="Current Milleage">
+                </div>
+              </div>
+             
+              
+
+      <div class="col-md-12">
+        <!-- Material input -->
+        <div class="md-form form-group">
+          <input type="text" [(ngModel)]="localCar.Img" name="Img" class="form-control" placeholder="Enter only Image URL">
+        </div>
+      </div>
+
+      <div class="row col-md-12 p-6">
+        <div class="col-md-6">
+          <div class="custom-control custom-checkbox">
+            <input type="radio" [(ngModel)]="localCar.IsProperForRent" name="IsProperForRent" value="true">
+            <label> Proper for Rent</label>
+
+          </div>
+        </div>
+
+        <div class="col-md-6">
+          <div class="custom-control custom-checkbox">
+            <input type="radio" [(ngModel)]="localCar.IsProperForRent" name="IsProperForRent" value="false">
+            <label> Not proper for rent</label>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-12">
+        <!-- Material input -->
+        <div class="md-form form-group">
+          <input type="text" [(ngModel)]="localCar.CarNumber" name="CarNumber" class="form-control" placeholder="Car Number">
+        </div>
+      </div>
+
+
+      <div class="col-md-12">
+      <div class="form-group">
+          <label for="exampleFormControlSelect1">Branch</label>
+          
+        <select class="form-control mb-4" [(ngModel)]="localCar.Branch" name="Branch.BranchName" >
+            <option  *ngFor="let branch of this.branches" [ngValue]="branch">
+              <a (click)="setSelectedBranch(branch)">{{branch.BranchName}}</a></option>
+          
+          </select>
+        </div>
+      </div>
+        
+
+</div>
+
+<button class=" text-muted" routerLink="/cars" class="btn btn-default"> Go back</button>
+<button type="submit" class="btn btn-primary btn-md" *ngIf="localParam" (click)="editCar()">Save</button>
+<button type="submit" class="btn btn-primary btn-md" *ngIf="!localParam" routerLink="/cars" (click)="addCar()">Add a new Car</button>
+</form>
+</div>

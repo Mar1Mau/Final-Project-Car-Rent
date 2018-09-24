@@ -1,0 +1,72 @@
+<div class="card card-cascade wider reverse example z-depth-5">
+
+    <!-- Card image -->
+   
+      <img class="card-img-top img-fluid z-depth-4 " [src]="imgLink" alt="Card image cap">
+      
+    
+      <div class="card-img-overlay ">
+    <!-- Card content -->
+    <div class="card text-center ">
+        
+        <div class="card-body">
+          <h5 class="card-title">Car Rental in Israel</h5>
+          <form>
+            <div class="row">
+              <div class="col-xs-12 col-12 col-sm-6 col-md-4 form-group">
+                  <label>Pick Up</label>
+                <input type="date" [(ngModel)]="localOrder.StartDate" name="StartDate"  class="form-control" />
+                
+              </div>
+              <div class="col-xs-12 col-12 col-sm-6 col-md-4 form-group">
+                  <label>Return</label>
+                <input type="date" [(ngModel)]="localOrder.ReturnDate" name="ReturnDate" class="form-control" />
+              </div>
+
+              <div class="col-xs-12 col-12 col-sm-6 col-md-4 form-group"  >
+                  <div class="form-group">
+                      <label for="exampleFormControlSelect1">Car</label>
+                      <select class="form-control" id="exampleFormControlSelect1" >
+                        <option *ngFor="let car of carTypes">{{car.ManufactrName}} {{car.Model}}</option>
+                        
+                      </select>
+                    </div>
+              </div>
+   
+            </div>
+            <div class="d-flex flex-row-reverse">
+            <button href="#" class="btn btn-info waves-effect p-2 btn-lg" routerLink="/add-order">Order</button>
+          </div>
+          </form>
+         </div>
+      </div>
+  
+    </div>
+
+    
+    
+</div>
+  <!-- Card -->
+
+ 
+  <div id="myText" class="text-center">
+    <br>
+    <br>
+      <p>43 Years of Experience and Leadership in the Car Rental Industry in Israel.</p>
+      <p> We are a family owned second generation business, operating since 1972 !</p>
+        
+        <p>Since then expanded to become one of Israel's most reputable rental and leasing companies with a diverse and very large vehicle inventory. Our commitment to personal service, vehicle safety and business standards set us apart and above the industry standard.</p>
+         
+        <p>We've gained the trust of both local and international clients who depend on our car services every time they visit Israel to lecture, for a business meeting or to visit family members.</p>
+         
+        <p>They choose us because we have the best rates, the best service and a large variety of safe vehicles to choose from. "We want customers for life" and our repeat business is our testament to that mission.Travel through Israel with Tamir Rental Car for a no hassle experience. You're in great hands with Tamir. Reserve your rental car for Israel today, click here, or call us for a FREE quote at 1-800. We speak English, French, Russian, German and Hebrew!</p>
+         
+        <p>We operate in key locations including Israel's Ben Gurion International Airport and major cities in Israel but ultimately "the customer is the main location." You decide where you need the car and where to drop it off. Upon your car rental reservation in Israel, we will go ahead and prepare your vehicle with the accessories you reserved, pick you up according to your specifications, help with your luggage, show you to the vehicle, update you on local traffic rules and the vehicle, and also, be there for you 24 hours 7 days a week if you have any questions or need assistance.</p>
+         
+        <p>"Our multilingual, friendly and knowledgeable staff will make your car rental experience in Israel a breeze."</p>
+       
+      
+        <p>Traveling to Israel on a business trip, use our business representative in order to tailor made you the best business offer.</p>
+    </div>
+  
+ 

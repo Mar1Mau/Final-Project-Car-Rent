@@ -1,0 +1,38 @@
+<table class="table table-striped table-responsive-md btn-table">
+  
+
+
+  <div *ngIf="msg">{{msg}}</div>
+<thead>
+  <tr>
+    <th>
+       <button type="button" class="btn btn-outline-info waves-effect" routerLink="/cars/add-car-type">
+      <i class="fa fa-plus"></i></button>
+    </th>
+    <th>Manufacture Name</th>
+    <th>Model</th>
+    <th>Daily Cost</th>
+    <th> Overdue Cost Per Day</th>
+    <th>ManufactYear</th>
+    <th>Transmission</th>
+  </tr>
+</thead>
+
+<tbody>
+  <tr *ngFor="let type of carTypes">
+    <th scope="row"><button type="button" (click)="deleteCarType(type.Model)" class="btn btn-outline-danger btn-sm m-0 waves-effect"><i class="fa fa-remove mr-1"></i></button>
+    <button type="button"  routerLink="/car-types/{{type.Model}}" class="btn btn-outline-primary btn-sm m-0 waves-effect"><i class="fa fa-pencil mr-1"></i></button>
+</th>
+   
+    <td>{{type.ManufactrName}}</td>
+    <td>{{type.Model}}</td>
+    <td>{{type.DailyCost | currency}}</td>
+    <td>{{type.OverdueCostDay | currency}} </td>
+    <td>{{type.ManufactYear}}</td>
+    <td *ngIf="type.IsManual">Manual</td>
+    <td *ngIf="!type.IsManual">Automat</td>
+  </tr>
+
+</tbody>
+
+</table>

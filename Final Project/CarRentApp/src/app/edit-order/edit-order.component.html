@@ -1,0 +1,36 @@
+<!-- Default form login -->
+<div class="row d-flex justify-content-center">
+    <form class="text-center border border-light p-5 col-md-8 col-lg-6 col-xl-4 ">
+    
+        <p class="h4 mb-4" >Your Order</p>
+    
+        
+        <input type="date" [(ngModel)]="localOrder.StartDate" name="StartDate"  class="form-control mb-4" />
+    
+       
+        <input type="date" [(ngModel)]="localOrder.ReturnDate" name="ReturnDate" class="form-control mb-4" />
+
+        <input type="date" [(ngModel)]="localOrder.ActualReturnDate" name="ActualReturnDate" class="form-control mb-4" />
+
+        <input type="text" [(ngModel)]="localOrder.User.FullName" name="User.FullName" class="form-control mb-4" placeholder="Full Name">
+
+        <input type="text" [(ngModel)]="localOrder.User.IdCard" name="User.IdCard" class="form-control mb-4" placeholder="Id">
+
+        <input type="email" [(ngModel)]="localOrder.User.EmailAddress" name="User.EmailAddress" class="form-control mb-4" placeholder="Email">
+
+        <input type="text" [(ngModel)]="localOrder.Car.CarType.ManufactrName" name="Car.CarType.ManufactrName" class="form-control mb-4" placeholder="ManufactrName">
+
+        <input type="text" [(ngModel)]="localOrder.Car.CarType.Model" name="Car.CarType.Model" class="form-control mb-4" placeholder="Model">
+        <input type="text" [(ngModel)]="localOrder.Car.CarType.ManufactYear" name="Car.CarType.ManufactYear" class="form-control mb-4" placeholder="Year">
+        <input type="text" [(ngModel)]="localOrder.Car.CarType.IsManual" name="Car.CarType.IsManual" class="form-control mb-4" placeholder="IsManual">
+
+        <input type="text" [(ngModel)]="localOrder.Car.CarNumber" name="Car.CarNumber" class="form-control mb-4" placeholder="Car Number">
+        <input type="text" [(ngModel)]="localOrder.Car.Branch.BranchName" name="Car.Branch.BranchName" class="form-control mb-4" placeholder="Branch Name">
+    
+                        
+        
+        <button class="btn btn-info btn-block my-4" type="submit" (click)="editOrder()">Edit</button>
+        <button class=" text-muted" routerLink="/orders" class="btn btn-default"> Go back</button>
+      
+    </form>
+    </div>

@@ -1,0 +1,46 @@
+<table class="table table-striped table-responsive-md btn-table">
+    <div *ngIf="msg">{{msg}}</div>
+  <thead>
+    <tr>
+      <th>#</th>
+      <th>Start Date</th>
+      <th>Return Date</th>
+      <th>Actual Return Date</th>
+      <th> User</th>
+      <th>Car</th>
+      <th>Branch</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <tr *ngFor="let order of orders">
+      <th scope="row"><button type="button" (click)="deleteOrder(order.Car.CarNumber)" class="btn btn-outline-danger btn-sm m-0 waves-effect"><i class="fa fa-remove mr-1"></i></button>
+      <button type="button" routerLink="/orders/{{order.Car.CarNumber}}" class="btn btn-outline-primary btn-sm m-0 waves-effect"><i class="fa fa-pencil mr-1"></i></button>
+</th>
+     
+      <td>{{order.StartDate | date}}</td>
+      <td>{{order.ReturnDate | date}}</td>
+      <td>{{order.ActualReturnDate | date}}</td>
+      <td>User Info:
+        <ul>
+          <li>{{order.User.FullName}}</li>
+          <li>{{order.User.IdCard}}</li>
+          <li>{{order.User.EmailAddress}}</li>
+          <li>{{order.User.Passwd}}</li>
+          <li>{{order.User.UserName}}</li>
+        </ul>
+      </td>
+      <td>Car Info
+        <ul>
+          <li>{{order.Car.CarType.ManufactrName}}</li>
+          <li>{{order.Car.CarType.Model}}</li>
+          <li>{{order.Car.CarNumber}}</li>
+
+        </ul>
+      </td>
+      <td>{{order.Car.Branch.BranchName}}</td>
+    </tr>
+
+  </tbody>
+
+</table>
