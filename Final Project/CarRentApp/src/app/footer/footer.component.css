@@ -1,0 +1,17 @@
+/*nav{
+    position: fixed;
+    height: 50px;
+    bottom: 0;
+    width: 100%;
+    
+}
+
+
+*/
+
+div{
+    position: relative;
+   left:0px;
+   bottom:0px;
+   width:100%;
+}

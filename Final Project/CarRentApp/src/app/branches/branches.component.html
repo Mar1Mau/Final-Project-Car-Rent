@@ -1,0 +1,45 @@
+<section class="my-5">
+
+  <h2 class="h1-responsive font-weight-bold text-center my-5">Branches</h2>
+
+  <div class="container text-center text-md-left">
+
+    <!-- Grid row -->
+    <div class="row">
+
+
+      <div class="col-md-2 mx-auto" *ngFor="let x of branches">
+        <h5 class="font-weight-bold  mt-3 mb-4"> <i class="fa fa-map-marker"></i></h5>
+
+        <ul class="list-unstyled">
+          <li> {{x.FullAddress}} </li>
+        </ul>
+
+      </div>
+      <!-- Grid column -->
+
+      <hr class="clearfix w-100 d-md-none">
+
+    </div>
+    <!-- Grid row -->
+
+  </div>
+
+  <hr>
+
+
+  <div class="d-flex justify-content-center ">
+
+    <agm-map [latitude]="lat" [longitude]="lng">
+
+      <agm-marker *ngFor="let m of branches;" [latitude]="m.Latitude" [longitude]="m.Longitude" [label]="m.BranchName">
+</agm-marker>
+
+      <agm-circle [latitude]="lat + 0.3" [longitude]="lng" [radius]="5000" [fillColor]="'red'">
+      </agm-circle>
+
+    </agm-map>
+
+  </div>
+  <hr>
+</section>

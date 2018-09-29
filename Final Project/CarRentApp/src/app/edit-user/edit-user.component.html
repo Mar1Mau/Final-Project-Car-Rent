@@ -1,0 +1,64 @@
+<div class="container">
+
+  
+  <div class="alert alert-warning alert-dismissible fade show" role="alert"  *ngIf="actionMsg">
+    {{actionMsg}}
+  </div>
+
+    
+    <div class="form-group">
+       <input type="text" [(ngModel)]="localUser.FullName" name="FullName" class="form-control" placeholder="Full Name">
+    </div>
+
+    <div class="form-group">
+       <input type="date" [(ngModel)]="localUser.DoB" name="DoB" class="form-control" placeholder="Date of Birth">
+      </div>
+
+      <div class="form-group"> 
+      <input type="radio" [(ngModel)]="localUser.IsMale" name="isMale" value="true" >
+                      <label> Male</label>
+    
+        <input type="radio" [(ngModel)]="localUser.IsMale" name="isMale" value="false" >
+        <label> Female</label>
+      </div>
+
+      <div class="form-group">
+      <input type="password" [(ngModel)]="localUser.Passwd" name="Passwd" class="form-control" placeholder="Password">
+    </div>
+
+    <div class="form-group">
+        <input type="text" [(ngModel)]="localUser.IdCard" name="IdCard" class="form-control" placeholder="ID number">
+      </div>
+
+      <div class="form-group">
+      <input type="text" [(ngModel)]="localUser.UserName" name="UserName" class="form-control" placeholder="User Name">
+    </div>
+
+    <div class="form-group">
+        <input type="email" [(ngModel)]="localUser.EmailAddress" name="EmailAddress" class="form-control" placeholder="Email">
+    
+      </div>
+
+      <div class="form-group">
+      <input type="text" [(ngModel)]="localUser.Img" name="Img" class="form-control" placeholder="Enter only Image URL">
+    </div>
+  
+      <div class="form-group"> 
+          <input type="radio" [(ngModel)]="localUser.Role.RoleName" name="RoleName" value="User">
+          <label> User</label>
+
+          <input type="radio" [(ngModel)]="localUser.Role.RoleName" name="RoleName" value="Employee" >
+          <label> Employee</label>
+
+          <input type="radio" [(ngModel)]="localUser.Role.RoleName" name="RoleName" value="Manager">
+          <label > Manager</label>
+
+          </div>
+
+
+          <button class=" text-muted" routerLink="/users" class="btn btn-default"> Go back</button>
+    <button class="btn btn-default" (click)="editUser()">Submit</button>
+  
+  </div>
+
+ 

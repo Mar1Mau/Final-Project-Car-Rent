@@ -1,0 +1,76 @@
+<!-- Extended material form grid -->
+<div class="row d-flex justify-content-center">
+    <form class=" col-md-8 col-lg-8 col-xl-6 p-5  ">
+      
+
+      <div class="alert alert-warning alert-dismissible fade show" role="alert"  *ngIf="actionMsg">
+        {{actionMsg}}
+      </div>
+  
+  
+      <div class="form-row">
+       
+              <div class="col-md-12">
+                  <!-- Material input -->
+                  <div class="md-form form-group">
+                    <input type="text" [(ngModel)]="localType.ManufactrName" name="ManufactrName" class="form-control" placeholder="Manufacture Name">
+                  </div>
+                </div>
+               
+                
+  
+        <div class="col-md-12">
+          <!-- Material input -->
+          <div class="md-form form-group">
+            <input type="text" [(ngModel)]="localType.Model" name="Model" class="form-control" placeholder="Model">
+          </div>
+        </div>
+  
+        
+  
+        <div class="col-md-12">
+          <!-- Material input -->
+          <div class="md-form form-group">
+            <input type="number" [(ngModel)]="localType.DailyCost" name="DailyCost" class="form-control" placeholder="Daily Cost">
+          </div>
+        </div>
+  
+        <div class="col-md-12">
+          <!-- Material input -->
+          <div class="md-form form-group">
+            <input type="number" [(ngModel)]="localType.OverdueCostDay" name="OverdueCostDay" class="form-control" placeholder="Overdue Cost Per Day">
+          </div>
+        </div>
+  
+        
+        <div class="col-md-12">
+          <!-- Material input -->
+          <div class="md-form form-group">
+            <input type="text" [(ngModel)]="localType.ManufactYear" name="ManufactYear" class="form-control" placeholder="Manufacture Year">
+          </div>
+        </div>
+  
+        <div class="row col-md-12 p-6">
+          <div class="col-md-6">
+            <div class="custom-control custom-checkbox">
+              <input type="radio" [(ngModel)]="localType.IsManual" name="IsManual" value="true">
+              <label>Manual</label>
+  
+            </div>
+          </div>
+  
+          <div class="col-md-6">
+            <div class="custom-control custom-checkbox">
+              <input type="radio" [(ngModel)]="localType.IsManual" name="IsManual" value="false">
+              <label> Automat</label>
+            </div>
+          </div>
+        </div>
+  
+  
+  </div>
+  
+  <button class=" text-muted" routerLink="/car-types" class="btn btn-default"> Go back</button>
+  <button type="submit" class="btn btn-primary btn-md" (click)="editCar()">Edit Car Type </button>
+  </form>
+  </div>

@@ -1,0 +1,52 @@
+<!-- Default form contact -->
+<div class="row d-flex justify-content-center">
+
+  <!-- Grid column -->
+  <div class="col-lg-6 mb-4">
+
+    <!-- Form with header -->
+    <div class="card">
+      <div class="card-body">
+
+    
+        <form class="text-center border border-light p-5">
+
+          <h2 class="h1-responsive font-weight-bold text-center my-5">Contact us</h2>
+
+          <div class="text-center w-responsive mx-auto pb-5">
+              <p>Need some Help? Got a question, comment or feedback?</p>
+              <p>Feel free to contact us for any reason.</p>
+          </div>
+
+          <div class="alert alert-warning alert-dismissible fade show" role="alert"  *ngIf="actionMsg">
+              {{actionMsg}}
+            </div>
+          <!-- Name -->
+          <input type="text" class="form-control mb-4" placeholder="Name">
+
+          <!-- Email -->
+          <input type="email" id="defaultContactFormEmail" class="form-control mb-4" placeholder="E-mail">
+
+          <select class="browser-default custom-select mb-4">
+            <option value="" disabled>Choose option</option>
+            <option value="1" selected>Feedback</option>
+            <option value="2">Report a bug</option>
+            <option value="3">Feature request</option>
+            <option value="4">Other</option>
+            
+          </select>
+
+          <!-- Message -->
+          <div class="form-group">
+            <textarea class="form-control rounded-0" id="exampleFormControlTextarea2" rows="3" placeholder="Message"></textarea>
+          </div>
+
+          <!-- Send button -->
+          <button class="btn btn-info btn-block" (click)="Send()">Send</button>
+
+        </form>
+        <!-- Default form contact -->
+      </div>
+    </div>
+  </div>
+</div>

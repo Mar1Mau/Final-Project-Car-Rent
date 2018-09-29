@@ -1,0 +1,41 @@
+<!-- Default form login -->
+<div class="row d-flex justify-content-center">
+    <form class="text-center border border-light p-5 col-md-8 col-lg-6 col-xl-4 ">
+    
+      
+        <p class="h4 mb-4" >Your Order</p>
+    
+        
+        <input type="date" [(ngModel)]="localOrder.StartDate" name="StartDate"  class="form-control mb-4" />
+    
+       
+        <input type="date" [(ngModel)]="localOrder.ReturnDate" name="ReturnDate" class="form-control mb-4" />
+
+        
+
+       <select class="form-control mb-4" [(ngModel)]="localOrder.Car" name="Car.CarType.ManufactrName" >
+                        <option *ngFor="let car of cars" [ngValue]="car">
+                        <a (click)="setSelectedCar(car)">{{car.CarType.ManufactrName}} {{car.CarType.Model}}</a></option>
+                     
+                      </select>
+    
+       
+                      <select class="form-control mb-4" [(ngModel)]="localOrder.User" name="User.UserName" >
+                          <option  *ngFor="let user of users" [ngValue]="user">
+                            <a (click)="setSelectedUser(user)">{{user.UserName}}</a></option>
+                        
+                        </select>
+      
+               
+        
+        <button class="btn btn-info btn-block my-4" type="submit" (click)="addOrder()">Order</button>
+        <button class=" text-muted"  class="btn btn-default" routerLink="/cars"> Go back</button>
+
+          
+      <div class="alert alert-warning alert-dismissible fade show" role="alert"  *ngIf="actionMsg">
+            {{actionMsg}}
+          </div>
+      
+      
+    </form>
+    </div>

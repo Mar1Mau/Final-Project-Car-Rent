@@ -1,0 +1,17 @@
+c:\Users\marina\source\repos\DAL\BLL\bin\Debug\BLL.dll.config
+c:\Users\marina\source\repos\DAL\BLL\bin\Debug\BLL.dll
+c:\Users\marina\source\repos\DAL\BLL\bin\Debug\BLL.pdb
+c:\Users\marina\source\repos\DAL\BLL\bin\Debug\BOL.dll
+c:\Users\marina\source\repos\DAL\BLL\bin\Debug\DAL.dll
+c:\Users\marina\source\repos\DAL\BLL\bin\Debug\EntityFramework.dll
+c:\Users\marina\source\repos\DAL\BLL\bin\Debug\EntityFramework.SqlServer.dll
+c:\Users\marina\source\repos\DAL\BLL\bin\Debug\BOL.pdb
+c:\Users\marina\source\repos\DAL\BLL\bin\Debug\DAL.pdb
+c:\Users\marina\source\repos\DAL\BLL\bin\Debug\DAL.dll.config
+c:\Users\marina\source\repos\DAL\BLL\bin\Debug\EntityFramework.xml
+c:\Users\marina\source\repos\DAL\BLL\bin\Debug\EntityFramework.SqlServer.xml
+c:\Users\marina\source\repos\DAL\BLL\obj\Debug\BLL.csprojAssemblyReference.cache
+c:\Users\marina\source\repos\DAL\BLL\obj\Debug\BLL.csproj.CoreCompileInputs.cache
+c:\Users\marina\source\repos\DAL\BLL\obj\Debug\BLL.csproj.CopyComplete
+c:\Users\marina\source\repos\DAL\BLL\obj\Debug\BLL.dll
+c:\Users\marina\source\repos\DAL\BLL\obj\Debug\BLL.pdb

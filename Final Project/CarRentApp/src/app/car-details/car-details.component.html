@@ -1,0 +1,74 @@
+<div class="card mb-3 text-center hoverable">
+
+  <div class="card-body">
+    <div class="d-flex flex-row-reverse">
+  
+        <div class="alert alert-warning alert-dismissible fade show" role="alert"  *ngIf="actionMsg">
+            {{actionMsg}}
+          </div>
+      
+      <button type="button" class="btn btn-outline-danger waves-effect p-2 " (click)="deleteCar(localCar.CarNumber)" *ngIf="userInLocalStorage">
+        <i class="fa fa-remove mr-1"></i>
+      </button>
+      
+
+      <button type="button" class="btn btn-outline-info waves-effect p-2 " routerLink="/cars/edit/{{localCar.CarNumber}}" *ngIf="userInLocalStorage">
+        <i class="fa fa-pencil mr-1"></i>
+      </button>
+
+    </div>
+
+    <nav class="navbar navbar-light light-blue lighten-4">
+
+
+      <div class="row">
+
+        <div class="col-md-4 offset-md-1 mx-3 my-3">
+          <div class="view overlay">
+            <img [src]="localCar.Img" class="img-fluid" alt="Sample image for first version of blog listing">
+            <a>
+              <div class="mask rgba-white-slight"></div>
+            </a>
+          </div>
+        </div>
+
+        <div class="col-md-7 text-left ml-3 mt-3">
+
+          <h6 class="font-bold pb-1">
+            <i class="fa fa-car" aria-hidden="true"> {{localCar.CarType.Model}}</i>
+          </h6>
+          <h4 class="mb-4">
+            <strong>{{localCar.CarType.ManufactrName}} {{localCar.CarNumber}} <i class="fa fa-calendar" aria-hidden="true">
+                {{localCar.CarType.ManufactYear}}</i></strong>
+          </h4>
+          <p *ngIf="localCar.CarType.IsManual"> <i class="fa fa-gears" aria-hidden="true"> Manual</i></p>
+          <p *ngIf="!localCar.CarType.IsManual"><i class="fa fa-gears" aria-hidden="true"> Automat</i></p>
+
+          <p> <i class="fa fa-dashboard" aria-hidden="true"> Current Mileage: {{localCar.CurrentMileage}}</i></p>
+
+          <p *ngIf="localCar.IsProperForRent"> <i class="fas fa-check">Available</i></p>
+          <p *ngIf="!localCar.IsProperForRent"><i class="fa fa-ban"> Not Available</i></p>
+
+
+          <p>
+            <i class="fa fa-trophy" aria-hidden="true"> {{localCar.Branch.BranchName}}</i>
+          </p>
+          <p><i class="fa fa-map-pin" aria-hidden="true"></i> {{localCar.Branch.FullAddress}}</p>
+
+          <h1 class="badge badge-success mb-4">
+            <i class="fa fa-usd" aria-hidden="true"> <strong>{{localCar.CarType.DailyCost}} / day</strong> </i>
+          </h1>
+          <p>
+
+
+            <button class=" text-muted" routerLink="/cars" class="btn btn-default"> Go back</button>
+
+           
+
+          </p>
+        </div>
+      </div>
+    </nav>
+  </div>
+
+</div>

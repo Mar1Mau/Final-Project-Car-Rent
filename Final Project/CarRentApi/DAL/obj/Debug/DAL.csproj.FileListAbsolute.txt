@@ -1,0 +1,12 @@
+c:\users\marina\source\repos\DAL\DAL\bin\Debug\DAL.dll.config
+c:\users\marina\source\repos\DAL\DAL\bin\Debug\DAL.dll
+c:\users\marina\source\repos\DAL\DAL\bin\Debug\DAL.pdb
+c:\users\marina\source\repos\DAL\DAL\bin\Debug\EntityFramework.dll
+c:\users\marina\source\repos\DAL\DAL\bin\Debug\EntityFramework.SqlServer.dll
+c:\users\marina\source\repos\DAL\DAL\bin\Debug\EntityFramework.xml
+c:\users\marina\source\repos\DAL\DAL\bin\Debug\EntityFramework.SqlServer.xml
+c:\users\marina\source\repos\DAL\DAL\obj\Debug\DAL.csproj.CoreCompileInputs.cache
+c:\users\marina\source\repos\DAL\DAL\obj\Debug\DAL.csproj.CopyComplete
+c:\users\marina\source\repos\DAL\DAL\obj\Debug\DAL.dll
+c:\users\marina\source\repos\DAL\DAL\obj\Debug\DAL.pdb
+C:\Users\marina\source\repos\DAL\DAL\obj\Debug\DAL.csprojAssemblyReference.cache
