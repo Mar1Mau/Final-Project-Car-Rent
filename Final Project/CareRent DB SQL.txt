@@ -1,0 +1,227 @@
+
+--------CREATE DB-----------------------------------------------------------------
+
+
+CREATE DATABASE [CarRentDB]
+
+
+CREATE TABLE [dbo].[UserRoles](
+	[RoleID] [int] PRIMARY KEY IDENTITY,
+	[RoleName] [nvarchar](50) NOT NULL
+)
+GO
+
+CREATE TABLE [dbo].[Users]
+(
+        [UserID] [int] PRIMARY KEY IDENTITY NOT NULL,
+	[FullName] [nvarchar](100) NOT NULL,
+	[IdCard] [nvarchar](20) NOT NULL,
+	[UserName] [nvarchar](20) NOT NULL,
+	[DoB] [date] NULL,
+	[IsMale] [bit] NOT NULL,
+	[EmailAddress] [nvarchar](320) NOT NULL,
+	[Passwd] [nvarchar](50) NOT NULL,
+	[RoleID] [int] NOT NULL FOREIGN KEY REFERENCES [dbo].[UserRoles](RoleID),
+	[Img] [nvarchar](max) NULL,
+)
+GO
+
+CREATE TABLE [dbo].[Branches]
+(
+        [BranchID] [int] PRIMARY KEY IDENTITY NOT NULL,
+	[FullAddress] [nvarchar](100) NOT NULL,
+	[Latitude] [float] NOT NULL,
+	[Longitude] [float] NOT NULL,
+	[BranchName] [nvarchar](50) NOT NULL,	
+)
+GO
+
+CREATE TABLE [dbo].[CarTypes]
+(
+        [CarTypeID] [int] PRIMARY KEY IDENTITY NOT NULL,
+	[ManufactrName] [nvarchar](100) NOT NULL,
+	[Model] [nvarchar](100) NOT NULL,
+	[DailyCost] [decimal](18, 0) NOT NULL,
+	[OverdueCostDay] [decimal](18, 0) NOT NULL,
+	[ManufactYear] [nvarchar](10) NOT NULL,
+	[IsManual] [bit] NOT NULL,
+)
+GO
+
+CREATE TABLE [dbo].[Cars]
+(
+        [CarID] [int] PRIMARY KEY IDENTITY NOT NULL,
+	[CarTypeID] [int] NOT NULL FOREIGN KEY REFERENCES [dbo].[CarTypes](CarTypeID),
+	[CurrentMileage] [int] NOT NULL,
+	[Img] [nvarchar](max) NULL,
+	[IsProperForRent] [bit] NOT NULL,
+	[CarNumber] [nvarchar](20) NOT NULL,
+	[BranchID] [int] NOT NULL FOREIGN KEY REFERENCES [dbo].[Branches](BranchID),
+    
+)
+GO
+
+CREATE TABLE [dbo].[Orders]
+(
+        [OrderID] [int] PRIMARY KEY IDENTITY NOT NULL,
+	[StartDate] [date] NOT NULL,
+	[ReturnDate] [date] NOT NULL,
+	[ActualReturnDate] [date] NULL,
+	[UserID] [int] NOT NULL FOREIGN KEY REFERENCES [dbo].[Users](UserID),
+	[CarID] [int] NOT NULL FOREIGN KEY REFERENCES [dbo].[Cars](CarID),
+    
+)
+GO
+
+
+
+
+---------------Insert---------------------------------------------------------
+
+INSERT INTO [dbo].[UserRoles](RoleName) 
+VALUES ('Manager');
+
+INSERT INTO [dbo].[UserRoles](RoleName) 
+VALUES ('Employee');
+
+INSERT INTO [dbo].[UserRoles](RoleName) 
+VALUES ('User');
+
+
+
+INSERT INTO [dbo].[Users](UserID, FullName, IdCard, UserName, DoB, IsMale, EmailAddress, Passwd, RoleID, Img)
+VALUES (1, 'Kevin Maklyn', '365895561', 'KeviMak', 1983-08-22, 1, 'kevin@email.com', 'KK22PP', 2, 'https://www.famousbirthdays.com/faces/rogers-kevin-image.jpg');
+
+INSERT INTO [dbo].[Users](UserID, FullName, IdCard, UserName, DoB, IsMale, EmailAddress, Passwd, RoleID, Img)
+VALUES (2, 'Jaiden Burke', '377392132', 'JaidB198', 1984-02-01, 0, 'jaiden@email.com', 'JFFJ55HGF', 1, 'https://images.askmen.com/1080x540/2017/01/06-044621-the_pitfalls_of_dating_a_married_woman.jpg');
+
+INSERT INTO [dbo].[Users](UserID, FullName, IdCard, UserName, DoB, IsMale, EmailAddress, Passwd, RoleID, Img)
+VALUES (3, 'Angelina Jolie', '358444211', 'Jolie1975', 1975-06-04, 0, 'jolie@email.com', 'PP&&ihf', 3, 'https://nyppagesix.files.wordpress.com/2018/02/angelina-jolie.jpg?quality=90&strip=all');
+
+INSERT INTO [dbo].[Users](UserID, FullName, IdCard, UserName, DoB, IsMale, EmailAddress, Passwd, RoleID, Img)
+VALUES (4, 'Eli Raphael Roth', '475883922', 'Eli1804Roth', 1972-04-18, 1, 'eli@male.com', 'Pudhjgdk', 3, 'http://media.hollywood.com/images/638x425/1883655.jpg');
+					
+INSERT INTO [dbo].[Users](UserID, FullName, IdCard, UserName, DoB, IsMale, EmailAddress, Passwd, RoleID, Img)
+VALUES (5, 'Jack Peter Benedict', '689889877', 'Jack1988', 1988-07-08, 1, 'kack@email.com', 'Pupsonik8', 3, 'https://www.out.com/sites/out.com/files/2018/08/13/jack-whitehall-out-750x_4.jpg');
+
+INSERT INTO [dbo].[Users](UserID, FullName, IdCard, UserName, DoB, IsMale, EmailAddress, Passwd, RoleID, Img)
+VALUES (6, 'Scarlett Johansson', '689889997', 'ScarlyJo', 1984-11-22, 0, 'scar@email.com', '123Scar56', 3, 'https://www.wonderslist.com/wp-content/uploads/2013/05/ScarlettJohansson.jpg');
+
+INSERT INTO [dbo].[Users](UserID, FullName, IdCard, UserName, DoB, IsMale, EmailAddress, Passwd, RoleID, Img)
+VALUES (7, 'Olena', '7499183', 'OluOlu', NULL, 0, 'Olu@mail.com', '&PGYU77', 3, 'https://www.experto.de/wp-content/uploads/2012/07/AdobeStock_170297905-810x540.jpeg');
+
+INSERT INTO [dbo].[Users](UserID, FullName, IdCard, UserName, DoB, IsMale, EmailAddress, Passwd, RoleID, Img)
+VALUES (8, 'Wentworth Miller', '365881299', 'Miller1972', 1972-06-02, 1, 'miler@email.com', '56WEN1972', 1, 'http://img2.thejournal.ie/inline/1048509/original?width=428&version=1048509');
+					
+	
+
+
+
+INSERT INTO [dbo].[Branches](BranchID, FullAddress, Latitude, Longitude, BranchName)
+VALUES ( 1,'HaYarkon St 144, Tel Aviv-Yafo, Israel',32.0832063, 34.7692061, 'Tel Aviv');
+
+INSERT INTO [dbo].[Branches](BranchID, FullAddress, Latitude, Longitude, BranchName)
+VALUES ( 2,'Dov Hoz Airport, Tel Aviv-Yafo, 61480, Israel', 32.1046615, 34.7879397, 'Sde Dov Airport');
+
+INSERT INTO [dbo].[Branches](BranchID, FullAddress, Latitude, Longitude, BranchName)
+VALUES ( 3,'Aharonovich St 10, Bnei Brak, Israel', 32.0911783 ,34.8388247, 'Bnei Brak');
+
+INSERT INTO [dbo].[Branches](BranchID, FullAddress, Latitude, Longitude, BranchName)
+VALUES ( 4,'Ha-Sadnaot St 9, Herzliya, Israel', 32.1609981, 34.8064626, 'Herzliya');
+
+INSERT INTO [dbo].[Branches](BranchID, FullAddress, Latitude, Longitude, BranchName)
+VALUES ( 5,'David Saharov St 18, Rishon LeTsiyon, Israel', 31.9905364, 34.7716238, 'Rishon LeTsiyon');	
+
+INSERT INTO [dbo].[Branches](BranchID, FullAddress, Latitude, Longitude, BranchName)
+VALUES ( 6,'Ben Gurion Airport, 7015001, Israel', 32.005532, 34.8854112, 'Ben Gurion Airport');			
+	
+
+
+INSERT INTO [dbo].[CarTypes](CarTypeID, ManufactrName, Model, DailyCost, OverdueCostDay, ManufactYear, IsManual )
+VALUES (1, 'Citroën', 'C5', 100, 200, '2011', 0);
+
+INSERT INTO [dbo].[CarTypes](CarTypeID, ManufactrName, Model, DailyCost, OverdueCostDay, ManufactYear, IsManual )
+VALUES (2, 'Audi', 'A6', 231, 400, '2015', 0);
+
+INSERT INTO [dbo].[CarTypes](CarTypeID, ManufactrName, Model, DailyCost, OverdueCostDay, ManufactYear, IsManual )
+VALUES (3, 'Mazda', 'A6', 120, 240, '2014', 0);
+
+INSERT INTO [dbo].[CarTypes](CarTypeID, ManufactrName, Model, DailyCost, OverdueCostDay, ManufactYear, IsManual )
+VALUES (4, 'Hyundai', 'i20', 72, 144, '2014', 0);
+
+INSERT INTO [dbo].[CarTypes](CarTypeID, ManufactrName, Model, DailyCost, OverdueCostDay, ManufactYear, IsManual )
+VALUES (5, 'Nissan', 'Maxima', 196, 392, '2017', 0);
+
+INSERT INTO [dbo].[CarTypes](CarTypeID, ManufactrName, Model, DailyCost, OverdueCostDay, ManufactYear, IsManual )
+VALUES (6, 'BMW', '318i', 152, 304, '2017', 0);
+
+INSERT INTO [dbo].[CarTypes](CarTypeID, ManufactrName, Model, DailyCost, OverdueCostDay, ManufactYear, IsManual )
+VALUES (7, 'Citroën', 'DS 7 Crossback', 240, 480, '2017', 0);
+
+						
+
+
+
+INSERT INTO [dbo].[Cars](CarID, CarTypeID, CurrentMileage, Img, IsProperForRent, CarNumber, BranchID )
+VALUES ( 1, 1, 97500, 'https://img.favcars.com/citroen/c5/photos_citroen_c5_2011_3_b.jpg', 1, '53IYH', 1);
+
+INSERT INTO [dbo].[Cars](CarID, CarTypeID, CurrentMileage, Img, IsProperForRent, CarNumber, BranchID )
+VALUES ( 2, 2, 37000, 'https://s.aolcdn.com/dims-global/dims3/GLOB/legacy_thumbnail/788x525/quality/85/https://s.aolcdn.com/commerce/autodata/images/USC50AUC021B021001.jpg', 1, '13IIN', 2);
+
+INSERT INTO [dbo].[Cars](CarID, CarTypeID, CurrentMileage, Img, IsProperForRent, CarNumber, BranchID )
+VALUES ( 3, 3, 52000, 'https://www.mazdausa.com/siteassets/vehicles/2018/mz6/trims/touring/2018-mazda-6-trims-touring.jpg', 1, '351IL', 3);
+
+INSERT INTO [dbo].[Cars](CarID, CarTypeID, CurrentMileage, Img, IsProperForRent, CarNumber, BranchID )
+VALUES ( 4, 4, 48000, 'http://cars2daynews.com/wp-content/uploads/2015/02/hyundai-i20-2015-brochure.jpg', 1, '28ZXE', 4);
+
+INSERT INTO [dbo].[Cars](CarID, CarTypeID, CurrentMileage, Img, IsProperForRent, CarNumber, BranchID )
+VALUES ( 5, 5, 22000, 'https://st.motortrend.com/uploads/sites/10/2016/08/2017-nissan-maxima-sv-sedan-angular-front.png', 1, '29DBK', 5);
+
+INSERT INTO [dbo].[Cars](CarID, CarTypeID, CurrentMileage, Img, IsProperForRent, CarNumber, BranchID )
+VALUES ( 6, 6, 19000, 'https://res.cloudinary.com/carsguide/image/upload/f_auto,fl_lossy,q_auto,t_cg_hero_low/v1/editorial/vhs/BMW-3-Series_0.png', 0, '64ZKY', 6);
+
+INSERT INTO [dbo].[Cars](CarID, CarTypeID, CurrentMileage, Img, IsProperForRent, CarNumber, BranchID )
+VALUES ( 7, 5, 45325, 'https://images.dealer.com/ddc/vehicles/2018/Nissan/Maxima/Sedan/trim_35_S_2a64fc/color/Carnelian%20Red-NBM-108%2C24%2C37-640-en_US.jpg?impolicy=resize&w=650', 1, 'YY55R', 5);
+
+INSERT INTO [dbo].[Cars](CarID, CarTypeID, CurrentMileage, Img, IsProperForRent, CarNumber, BranchID )
+VALUES ( 8, 1, 35000, 'https://cdn.motor1.com/images/mgl/Nw8G2/s3/2017-citroen-c5-teaser-image.jpg', 1, 'Y5R72', 1);
+
+INSERT INTO [dbo].[Cars](CarID, CarTypeID, CurrentMileage, Img, IsProperForRent, CarNumber, BranchID )
+VALUES ( 9, 7, 15382, 'https://www.howardsgroup.co.uk/assets/brands/ds-automobiles/ds7-crossback/ds7%20ultra%20prestige%20grey%2002-18.png', 1, 'CI563', 1);
+
+
+
+
+
+
+INSERT INTO [dbo].[Orders](OrderID, StartDate, ReturnDate, ActualReturnDate, UserID, CarID)
+VALUES ( 1, 2018-09-09, 2018-09-11, 2018-09-16, 5, 2);
+
+INSERT INTO [dbo].[Orders](OrderID, StartDate, ReturnDate, ActualReturnDate, UserID, CarID)
+VALUES ( 2, 2018-09-17, 2018-09-18, NULL, 4, 1);
+
+
+INSERT INTO [dbo].[Orders](OrderID, StartDate, ReturnDate, ActualReturnDate, UserID, CarID)
+VALUES ( 3, 2018-09-09, 2018-09-21, 2018-09-16, NULL, 6);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
