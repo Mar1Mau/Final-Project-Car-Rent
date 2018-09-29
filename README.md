@@ -41,34 +41,49 @@
   1. Home page 
 
 ![HomePage](Home.PNG)
-
+ <br>
+  <br>
 2. Login 
 
 ![Login](Login.PNG)
+ <br>
+  <br>
 
 3. Home page after logged in
 
 ![HomeAfterLogin](HomeAfterLogged.PNG)
+ <br>
+  <br>
 
 4. Cars
 
 ![Cars](Cars.PNG)
+ <br>
+  <br>
 
 5. Car Details with edit/delete option
 
 ![CarDetails](CarDetails.PNG)
+ <br>
+  <br>
 
 6. Car Types with the CRUD methods
 
 ![CarTypes](CarTypes.PNG)
+ <br>
+  <br>
 
 7. Users with the CRUD methods
 
 ![Users](Users.PNG)
+ <br>
+  <br>
 
 8. Orders
 
 ![Orders](Orders.PNG)
+ <br>
+  <br>
 
 9. Branches
 
