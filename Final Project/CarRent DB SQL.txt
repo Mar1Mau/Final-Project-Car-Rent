@@ -138,7 +138,7 @@ VALUES ( 6,'Ben Gurion Airport, 7015001, Israel', 32.005532, 34.8854112, 'Ben Gu
 
 
 INSERT INTO [dbo].[CarTypes](CarTypeID, ManufactrName, Model, DailyCost, OverdueCostDay, ManufactYear, IsManual )
-VALUES (1, 'Citroën', 'C5', 100, 200, '2011', 0);
+VALUES (1, 'CitroÃ«n', 'C5', 100, 200, '2011', 0);
 
 INSERT INTO [dbo].[CarTypes](CarTypeID, ManufactrName, Model, DailyCost, OverdueCostDay, ManufactYear, IsManual )
 VALUES (2, 'Audi', 'A6', 231, 400, '2015', 0);
@@ -156,7 +156,7 @@ INSERT INTO [dbo].[CarTypes](CarTypeID, ManufactrName, Model, DailyCost, Overdue
 VALUES (6, 'BMW', '318i', 152, 304, '2017', 0);
 
 INSERT INTO [dbo].[CarTypes](CarTypeID, ManufactrName, Model, DailyCost, OverdueCostDay, ManufactYear, IsManual )
-VALUES (7, 'Citroën', 'DS 7 Crossback', 240, 480, '2017', 0);
+VALUES (7, 'CitroÃ«n', 'DS 7 Crossback', 240, 480, '2017', 0);
 
 						
 
