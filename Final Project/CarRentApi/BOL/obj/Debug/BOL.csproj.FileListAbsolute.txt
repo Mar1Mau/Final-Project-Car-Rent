@@ -1,6 +1,0 @@
-c:\Users\marina\source\repos\DAL\BOL\bin\Debug\BOL.dll
-c:\Users\marina\source\repos\DAL\BOL\bin\Debug\BOL.pdb
-c:\Users\marina\source\repos\DAL\BOL\obj\Debug\BOL.csproj.CoreCompileInputs.cache
-c:\Users\marina\source\repos\DAL\BOL\obj\Debug\BOL.dll
-c:\Users\marina\source\repos\DAL\BOL\obj\Debug\BOL.pdb
-C:\Users\marina\source\repos\DAL\BOL\obj\Debug\BOL.csprojAssemblyReference.cache
